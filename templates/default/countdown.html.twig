@@ -12,9 +12,9 @@
         <p class="lead">Here are some statistics about my age along with a very pretty photo of myself...</p>
         <div class="row">
      	    <div class="col-md-6">
-            <p class="birhday-date">My birthday is on {{ nextBirthdayStringFormatted }}.</p>
-            <p class="birhday-date">I am currently {{ currentAge }} years old ({{ birthdayStringFormatted }}).</p>
-            <p class="birhday-date">{{ nextBirthdayMonths }} months, {{ nextBirthdayDays }} days, {{ nextBirthdayHours }} hours, {{ nextBirthdayMinutes }} minutes and {{ nextBirthdaySeconds }} seconds until my {{ nextAgePretty }} birthday.</p>
+            <p class="birhday-date">My next birthday is on {{ nextBirthdayStringFormatted }}.</p>
+            <p class="birhday-date">I am currently {{ currentAge }} years old (Born on {{ birthdayStringFormatted }}).</p>
+            <p class="birhday-date">It is {{ nextBirthdayMonths }} months, {{ nextBirthdayDays }} days, {{ nextBirthdayHours }} hours, {{ nextBirthdayMinutes }} minutes and {{ nextBirthdaySeconds }} seconds until my {{ nextAgePretty }} birthday.</p>
           </div>
           <div class="col-md-6">
             <p><img class="person-image" src="{{ asset('build/images/people/elliott.landsborough.jpg') }}" alt="Photo of Elliott Landsborough" /></p>
