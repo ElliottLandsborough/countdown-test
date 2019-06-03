@@ -8,6 +8,7 @@ use NumberFormatter;
 
 class CountdownController extends AbstractController
 {
+	//todo: separate this into another class
 	private function ordinal($number) {
 	    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
 	    if ((($number % 100) >= 11) && (($number%100) <= 13))
