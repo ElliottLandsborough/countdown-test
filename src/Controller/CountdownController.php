@@ -6,9 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CountdownController extends AbstractController
 {
-	/**
-     * @Route("/")
-     */
     public function countdown()
     {
     	$name = 'you';
