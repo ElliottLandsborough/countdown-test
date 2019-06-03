@@ -1,6 +1,11 @@
 # Countdown Test
 
-
+## Run with docker
+```
+$ git clone git@gitlab.com:elliottlan/countdown-test.git
+$ cd countdown-test
+...
+```
 
 ## Simple dev server
 ```
