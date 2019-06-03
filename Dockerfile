@@ -25,7 +25,7 @@ RUN yarn install && yarn encore production
 FROM php:7-fpm-alpine
 
 COPY . /var/www/html
-RUN rm /var/cache/*
+RUN  rm -rf /var/cache/apk/*
 COPY --from=vendor /app/vendor/ /var/www/html/vendor/
 COPY --from=frontend /public/build/ /var/www/html/public/build/
 
