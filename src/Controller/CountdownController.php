@@ -65,7 +65,7 @@ class CountdownController extends AbstractController
 		$nextAge = intval($currentAge) + 1;
 
 		// my next age formatted in a readable way
-		$locale = 'en_GB';
+		$locale = 'en';
 		$nf = new NumberFormatter($locale, NumberFormatter::ORDINAL);
 		$nextAgePretty = $nf->format($nextAge);
 
