@@ -4,6 +4,7 @@
 ```
 $ git clone git@gitlab.com:elliottlan/countdown-test.git
 $ cd countdown-test
+$ cp .env.example .env
 docker-compose up -d
 [visit http://localhost:5678]
 ```
@@ -12,6 +13,7 @@ docker-compose up -d
 ```
 $ git clone git@gitlab.com:elliottlan/countdown-test.git
 $ cd countdown-test
+$ cp .env.example .env
 $ composer install
 $ php bin/console server:start
 ```
