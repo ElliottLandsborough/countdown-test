@@ -4,17 +4,14 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use DateTime;
-use NumberFormatter;
+use App\Utils\DateClass;
 
 class CountdownController extends AbstractController
 {
-	//todo: separate this into another class
-	private function ordinal($number) {
-	    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
-	    if ((($number % 100) >= 11) && (($number%100) <= 13))
-	        return $number. 'th';
-	    else
-	        return $number. $ends[$number % 10];
+	private $dateClass;
+
+	function __construct(DateClass $dateClass) {
+		$this->dateClass = $dateClass;
 	}
 
     public function countdown()
@@ -77,7 +74,7 @@ class CountdownController extends AbstractController
         	'birthdayStringFormatted' => $birthdayStringFormatted,
             'nextBirthdayStringFormatted' => $nextBirthdayStringFormatted,
             'currentAge' => $currentAge,
-            'nextAgePretty' => $this->ordinal($nextAge),
+            'nextAgePretty' => $this->dateClass->ordinal($nextAge),
             'nextBirthdayMonths' => $nextBirthdayMonths,
             'nextBirthdayDays' => $nextBirthdayDays,
             'nextBirthdayHours' => $nextBirthdayHours,
