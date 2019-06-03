@@ -8,6 +8,14 @@ use NumberFormatter;
 
 class CountdownController extends AbstractController
 {
+	private function ordinal($number) {
+	    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+	    if ((($number % 100) >= 11) && (($number%100) <= 13))
+	        return $number. 'th';
+	    else
+	        return $number. $ends[$number % 10];
+	}
+
     public function countdown()
     {
     	$today = date('Y-m-d');
@@ -64,16 +72,11 @@ class CountdownController extends AbstractController
 		// my next age
 		$nextAge = intval($currentAge) + 1;
 
-		// my next age formatted in a readable way
-		$locale = 'en';
-		$nf = new NumberFormatter($locale, NumberFormatter::ORDINAL);
-		$nextAgePretty = $nf->format($nextAge);
-
         return $this->render('default/countdown.html.twig', [
         	'birthdayStringFormatted' => $birthdayStringFormatted,
             'nextBirthdayStringFormatted' => $nextBirthdayStringFormatted,
             'currentAge' => $currentAge,
-            'nextAgePretty' => $nextAgePretty,
+            'nextAgePretty' => $this->ordinal($nextAge),
             'nextBirthdayMonths' => $nextBirthdayMonths,
             'nextBirthdayDays' => $nextBirthdayDays,
             'nextBirthdayHours' => $nextBirthdayHours,
