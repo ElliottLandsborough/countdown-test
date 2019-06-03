@@ -9,3 +9,19 @@ $ cd countdown-test
 $ composer install
 $ php bin/console server:start
 ```
+
+## Assets
+```
+$ yarn install
+```
+```
+$ yarn encore dev
+```
+--OR--
+```
+$ yarn encore dev --watch
+```
+--OR--
+```
+$ yarn encore production
+```

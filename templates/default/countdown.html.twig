@@ -3,26 +3,28 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}" />
 {% endblock %}
 
 {% block javascripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('build/app.js') }}" />
 {% endblock %}
 
 {% block body %}
     <main role="main" class="container">
-     	<h1 class="mt-5">Countdown Test</h1>
-      	<p class="lead">Here are some statistics about my age along with a very pretty photo of myself...</p>
-      	<div class="row">
-      		<div class="col-md-6">
-      			<p><img src="stunning.png" alt="Photo of Elliott Landsborough" /></p>
-      		</div>
-     		<div class="col-md-6">
-      			<p class="birhday-date">My birthday is on xyz.</p>
-      			<p class="birhday-date">I am currently x years, y days and z hours old.</p>
-      			<p class="birhday-date">x days until my y birthday.</p>
-      		</div>
-      	</div>
-      	<p>Created by Elliott Landsborough. <a href="https://github.com/ElliottLandsborough/" target="_blank">View my github...</a></p>
+      <h1 class="mt-5">Countdown Test</h1>
+        <p class="lead">Here are some statistics about my age along with a very pretty photo of myself...</p>
+        <div class="row">
+     	    <div class="col-md-6">
+            <p class="birhday-date">My birthday is on xyz.</p>
+            <p class="birhday-date">I am currently x years, y days and z hours old.</p>
+            <p class="birhday-date">x days until my y birthday.</p>
+          </div>
+          <div class="col-md-6">
+            <p><img class="person-image" src="{{ asset('build/images/people/elliott.landsborough.jpg') }}" alt="Photo of Elliott Landsborough" /></p>
+          </div>
+        </div>
+        <p>Created by Elliott Landsborough. <a href="https://github.com/ElliottLandsborough/" target="_blank">View my github...</a></p>
     </main>
 {% endblock %}
