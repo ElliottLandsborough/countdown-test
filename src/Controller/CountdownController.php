@@ -2,14 +2,19 @@
 // src/Controller/CountdownController.php
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class CountdownController
+class CountdownController extends AbstractController
 {
+	/**
+     * @Route("/")
+     */
     public function countdown()
     {
-        return new Response(
-            '<html><body>Blank Page</body></html>'
-        );
+    	$name = 'you';
+
+        return $this->render('default/countdown.html.twig', [
+            'name' => $name,
+        ]);
     }
 }
