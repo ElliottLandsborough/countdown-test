@@ -1,5 +1,5 @@
 # composer
-FROM composer:latest as vendor
+FROM composer:latest as countdownvendor
 
 COPY composer.json composer.lock ./
 
@@ -11,7 +11,7 @@ RUN composer install \
     --prefer-dist
 
 # build css & js
-FROM node:current-alpine as frontend
+FROM node:current-alpine as countdownfrontend
 
 RUN mkdir -p ./public/build
 
@@ -25,8 +25,8 @@ FROM php:7-fpm-alpine
 
 COPY . /var/www/html
 RUN  rm -rf /var/cache/apk/*
-COPY --from=vendor /app/vendor/ /var/www/html/vendor/
-COPY --from=frontend /public/build/ /var/www/html/public/build/
+COPY --from=countdownvendor /app/vendor/ /var/www/html/vendor/
+COPY --from=countdownfrontend /public/build/ /var/www/html/public/build/
 
 # change uid and gid for www-data user (alpine)
 RUN apk --no-cache add shadow && \
