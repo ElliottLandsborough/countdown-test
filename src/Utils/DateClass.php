@@ -16,7 +16,7 @@ use DateTime;
 class DateClass
 {
     protected $today;
-    protected $birthdayString; //
+    protected $birthdayString;
     protected $birthdayObject;
     protected $nextBirthdayString;
     protected $nextBirthdayObject;
