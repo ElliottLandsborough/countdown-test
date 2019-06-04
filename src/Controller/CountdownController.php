@@ -10,7 +10,7 @@ class CountdownController extends AbstractController
 {
     protected $dateClass;
 
-    function __construct(DateClass $dateClass)
+    public function __construct(DateClass $dateClass)
     {
         $this->dateClass = $dateClass;
     }
