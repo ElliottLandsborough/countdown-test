@@ -11,7 +11,7 @@ use App\Utils\DateClass;
  * @category Controllers
  * @package  App\Controller\CountdownController
  * @author   Elliott Landsborough <elliott.landsborough@gmail.com>
- * @license  https://opensource.org/licenses/MIT  MIT License
+ * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://gitlab.com/elliottlan/countdown-test
  */
 class CountdownController extends AbstractController
