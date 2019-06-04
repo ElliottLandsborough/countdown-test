@@ -4,7 +4,7 @@
 ```
 $ git clone git@gitlab.com:elliottlan/countdown-test.git
 $ cd countdown-test
-$ docker-compose up -d
+$ docker-compose up -d --build;
 [visit http://localhost:6789]
 ```
 
