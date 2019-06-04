@@ -3,6 +3,7 @@
 namespace App\Utils;
 
 use DateTime;
+use DateInterval;
 
 /**
  * Utility class for date manipulation
@@ -37,7 +38,7 @@ class DateClass
      *
      * @return \App\Utils\DateClass $this
      */
-    public function setBirthday(string $string)
+    public function setBirthday(string $string): ?self
     {
         $this->setBirthdayString($string);
         $this->setBirthdayObject();
@@ -55,7 +56,7 @@ class DateClass
      *
      * @return \App\Utils\DateClass $this
      */
-    protected function setBirthdayString(string $string)
+    protected function setBirthdayString(string $string): ?self
     {
         $this->birthdayString = $string;
 
@@ -67,7 +68,7 @@ class DateClass
      *
      * @return String 'Y-m-d'
      */
-    protected function getBirthdayString()
+    protected function getBirthdayString(): ?String
     {
         return $this->birthdayString;
     }
@@ -77,7 +78,7 @@ class DateClass
      *
      * @return DateTime Birthday
      */
-    protected function getBirthdayObject()
+    protected function getBirthdayObject(): ?DateTime
     {
         return $this->birthdayObject;
     }
@@ -87,7 +88,7 @@ class DateClass
      *
      * @return \App\Utils\DateClass $this
      */
-    protected function setBirthdayObject()
+    protected function setBirthdayObject(): ?self
     {
         $this->birthdayObject = new DateTime($this->getBirthdayString());
 
@@ -99,7 +100,7 @@ class DateClass
      *
      * @return String 'Y-m-d'
      */
-    protected function getNextBirthdayString()
+    protected function getNextBirthdayString(): ?String
     {
         return $this->nextBirthdayString;
     }
@@ -109,7 +110,7 @@ class DateClass
      *
      * @return \App\Utils\DateClass $this
      */
-    protected function setNextBirthdayString()
+    protected function setNextBirthdayString(): ?self
     {
         // my next birthday string
         $nextBirthdayString = date('Y') . '-' . substr($this->birthdayString, 5, 5);
@@ -137,7 +138,7 @@ class DateClass
      *
      * @return DateTime Next birthday
      */
-    protected function getNextBirthdayObject()
+    protected function getNextBirthdayObject(): ?DateTime
     {
         return $this->nextBirthdayObject;
     }
@@ -147,7 +148,7 @@ class DateClass
      *
      * @return \App\Utils\DateClass $this
      */
-    protected function setNextBirthdayObject()
+    protected function setNextBirthdayObject(): ?self
     {
         $this->nextBirthdayObject = new DateTime($this->getNextBirthdayString());
 
@@ -159,7 +160,7 @@ class DateClass
      *
      * @return String date('l jS F Y')
      */
-    public function getReadableNextBirthdayString()
+    public function getReadableNextBirthdayString(): ?String
     {
         return $this->getNextBirthdayObject()->format('l jS F Y');
     }
@@ -169,7 +170,7 @@ class DateClass
      *
      * @return String date('l jS F Y')
      */
-    public function getReadableBirthdayString()
+    public function getReadableBirthdayString(): ?String
     {
         return $this->getBirthdayObject()->format('l jS F Y');
     }
@@ -179,7 +180,7 @@ class DateClass
      *
      * @return \DateInterval object
      */
-    protected function getBirthdayDiff()
+    protected function getBirthdayDiff(): ?DateInterval
     {
         return $this->getBirthdayObject()->diff(new DateTime('now'));
     }
@@ -189,7 +190,7 @@ class DateClass
      *
      * @return \DateInterval object
      */
-    public function getNextBirthdayDiff()
+    public function getNextBirthdayDiff(): ?DateInterval
     {
         return $this->getNextBirthdayObject()->diff(new DateTime('now'));
     }
@@ -199,7 +200,7 @@ class DateClass
      *
      * @return \App\Utils\DateClass $this
      */
-    protected function setCurrentAge()
+    protected function setCurrentAge(): ?self
     {
         // my current age
         $this->currentAge = $this->getBirthdayDiff()->y;
@@ -212,7 +213,7 @@ class DateClass
      *
      * @return int Current age
      */
-    public function getCurrentage()
+    public function getCurrentage(): ?int
     {
         return $this->currentAge;
     }
@@ -225,7 +226,7 @@ class DateClass
      *
      * @return String The number with its suffix e.g 24th, 31st
      */
-    public function ordinal(int $number)
+    public function ordinal(int $number): ?string
     {
         $ends = array('th','st','nd','rd','th','th','th','th','th','th');
         if ((($number % 100) >= 11) && (($number%100) <= 13)) {

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use App\Utils\DateClass;
 
 /**
@@ -33,7 +34,7 @@ class CountdownController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response Twig template + data
      */
-    public function countdown()
+    public function countdown(): ?Response
     {
         $nextBirthdayString = $this->dateClass->getReadableNextBirthdayString();
         $birthdayString = $this->dateClass->getReadableBirthdayString();
