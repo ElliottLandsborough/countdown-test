@@ -5,7 +5,7 @@
 $ git clone git@gitlab.com:elliottlan/countdown-test.git
 $ cd countdown-test
 $ cp .env.example .env
-docker-compose up -d
+$ docker-compose up -d
 [visit http://localhost:5678]
 ```
 
