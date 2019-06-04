@@ -39,6 +39,7 @@ docker container stop countdown_nginx_1;
 docker container rm countdown_php_1;
 docker container rm countdown_nginx_1;
 docker volume rm countdowntest_countdownroot;
+docker volume rm countdown-test_countdownroot;
 docker system prune --volumes;
 ```
 
