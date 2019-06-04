@@ -20,12 +20,13 @@ class CountdownController extends AbstractController
     protected $dateClass;
 
     /**
-     * [__construct description]
+     * Constructor, initialize the date util class
      *
      * @param DateClass $dateClass Util class for date manipulation
      */
     public function __construct(DateClass $dateClass)
     {
+        // make sure the date is set yyyy-mm-dd. Input validation doesnt happen.
         $this->dateClass = $dateClass->setBirthday('1987-07-10');
     }
 
